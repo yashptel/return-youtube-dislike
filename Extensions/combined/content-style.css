@@ -20,13 +20,11 @@
 
 #ryd-bar-container {
   background: var(--yt-spec-icon-disabled);
-  border-radius: 2px;
 }
 
 #ryd-bar {
   background: var(--yt-spec-text-primary);
-  border-radius: 2px;
-  transition: all 0.15s ease-in-out;
+  transition: width 0.3s;
 }
 
 .ryd-tooltip {
@@ -54,11 +52,7 @@
   top: -6px;
 }
 
-/* required to make the ratio bar visible in the new design */
-ytd-menu-renderer.ytd-watch-metadata {
-  overflow-y: visible !important;
-}
-
-#top-level-buttons-computed {
-  position: relative !important;
+#actions-inner .ryd-tooltip {
+  top: 1px;
+  left: 4px;
 }

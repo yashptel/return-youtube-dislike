@@ -14,9 +14,9 @@ function createRateBar(likes, dislikes) {
     let rateBar = document.getElementById("ryd-bar-container");
 
     const widthPx =
-      getLikeButton().clientWidth +
-      getDislikeButton().clientWidth +
-      (isRoundedDesign() ? 0 : 8);
+      getButtons().children[0].clientWidth +
+      getButtons().children[1].clientWidth +
+      (document.getElementById("actions-inner") ? 4 : 8);
 
     const widthPercent =
       likes + dislikes > 0 ? (likes / (likes + dislikes)) * 100 : 50;
@@ -63,7 +63,9 @@ function createRateBar(likes, dislikes) {
         ).insertAdjacentHTML(
           "beforeend",
           `
-              <div class="ryd-tooltip ryd-tooltip-${isNewDesign() ? "new" : "old"}-design" style="width: ${widthPx}px">
+              <div class="ryd-tooltip ryd-tooltip-${
+                isNewDesign() ? "new" : "old"
+              }-design" style="width: ${widthPx}px">
               <div class="ryd-tooltip-bar-container">
                 <div
                     id="ryd-bar-container"
